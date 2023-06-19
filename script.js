@@ -10,13 +10,16 @@ class Calculator {
         this.currentOperand = ''
         this.operation = undefined
     }
+
     delete(){
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
+
     appendNumber(number){
         if(number === '.' && this.currentOperand.includes('.'))return
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
+
     chooseOperation(operation){
         if(this.currentOperand === '')return
         if(this.previousOperand !== ''){
@@ -26,6 +29,7 @@ class Calculator {
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
+
     compute(){
         let computation
         const previous = parseFloat(this.previousOperand)
@@ -54,7 +58,9 @@ class Calculator {
 
     updateDisplay(){
         this.currentOperandTextElement.innerText = this.currentOperand
-        this.previousOperandTextElement.innerText = this.previousOperand
+        if(this.operation != null){
+            this.previousOperandTextElement.innerText =`${this.previousOperand} ${this.operation}`
+        }
     }
     
 }
