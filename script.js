@@ -62,9 +62,7 @@ class Calculator {
             this.previousOperandTextElement.innerText =`${this.previousOperand} ${this.operation}`
         }
     }
-    
 }
-
 
 const output = document.querySelector('.Output-Screen')
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
