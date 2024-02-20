@@ -8,7 +8,7 @@ class Calculator {
     clearButton(){
         this.previousOperand = ''
         this.currentOperand = ''
-        this.operation = undefined
+        this.operation = ''
     }
 
     delete(){
